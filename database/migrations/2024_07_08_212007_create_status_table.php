@@ -11,12 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('applicants_job', function (Blueprint $table) {
+        Schema::create('status', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('applicant_id')->constrained();
-            $table->foreignId('job_id')->constrained();
-            $table->foreignId('status_id')->constrained();
-            $table->softDeletes();
+            $table->string('name');
             $table->timestamps();
         });
     }
@@ -26,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('applicants_applications');
+        Schema::dropIfExists('statuses');
     }
 };

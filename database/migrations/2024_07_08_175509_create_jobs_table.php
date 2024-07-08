@@ -20,6 +20,7 @@ return new class extends Migration
             $table->foreignId('currency_id')->constrained()->nullable();
             $table->decimal('salary',2,10)->nullable();
             $table->foreignId('experience_id')->constrained();
+            $table->foreignId('type_jobs_id')->constrained();
             $table->string('title');
             $table->string('slug')->unique();
             $table->text('description');
@@ -27,6 +28,8 @@ return new class extends Migration
             $table->string('ege_min',2)->nullable();
             $table->string('ege_max',2)->nullable();
             $table->integer('vacant_quantities')->nullable();
+            $table->date('start_date')->nullable();
+            $table->date('end_date')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

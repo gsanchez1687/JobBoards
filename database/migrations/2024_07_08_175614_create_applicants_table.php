@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('address');
             $table->string('title');
             $table->string('cv');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

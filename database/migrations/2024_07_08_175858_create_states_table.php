@@ -12,12 +12,21 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('states', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('country_id')->constrained()->onDelete('cascade');
-            $table->string('name');
-            $table->string('code');
-            $table->string('phone_code');
-            $table->timestamps();
+            $table->mediumIncrements('id');
+            $table->string('name', 255)->nullable(false);
+            $table->mediumInteger('country_id')->unsigned()->nullable(false);
+            $table->char('country_code', 2)->nullable();
+            $table->string('fips_code', 255)->nullable();
+            $table->string('iso2', 191)->nullable();
+            $table->string('type', 255)->nullable();
+            $table->decimal('latitude', 10, 8)->nullable();
+            $table->decimal('longitude', 11, 8)->nullable();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent()->onUpdate(now());
+            $table->boolean('flag')->default(true);
+            $table->string('wikiDataId', 255)->nullable();
+
+            $table->foreign('country_id')->references('id')->on('countries');
         });
     }
 
