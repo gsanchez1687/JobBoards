@@ -1,0 +1,48 @@
+//
+// _about.scss
+//
+
+/*********************************/
+/*         About Us              */
+/*===============================*/
+.about-left,
+.about-right {
+    .img-one {
+        max-width: 80%;
+        .cta-video {
+            position: absolute;
+            top: 5%;
+        }
+    }
+    .img-two {
+        position: absolute;
+        bottom: -10%;
+        max-width: 220px;
+    }
+}
+
+.about-left {
+    .img-one {
+        .cta-video {
+            right: 5%;
+        }
+    }
+
+    .img-two {
+        right: 0;
+    }
+}
+
+.about-right {
+    display: flex;
+    justify-content: end;
+    .img-one {
+        .cta-video {
+            left: 5%;
+        }
+    }
+
+    .img-two {
+        left: 0;
+    }
+}
