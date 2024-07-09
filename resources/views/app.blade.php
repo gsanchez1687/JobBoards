@@ -65,13 +65,23 @@
                             <button type="button" class="dropdown-toggle btn btn-sm btn-icon btn-pills btn-primary" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <img src="{{ asset('images/team/01.jpg') }}" class="img-fluid rounded-pill" alt="">
                             </button>
+                            @auth
                             <div class="dropdown-menu dd-menu dropdown-menu-end bg-white rounded shadow border-0 mt-3">
                                 <a href="candidate-profile.html" class="dropdown-item fw-medium fs-6"><i data-feather="user" class="fea icon-sm me-2 align-middle"></i>Profile</a>
                                 <a href="candidate-profile-setting.html" class="dropdown-item fw-medium fs-6"><i data-feather="settings" class="fea icon-sm me-2 align-middle"></i>Settings</a>
                                 <div class="dropdown-divider border-top"></div>
                                 <a href="lock-screen.html" class="dropdown-item fw-medium fs-6"><i data-feather="lock" class="fea icon-sm me-2 align-middle"></i>Lockscreen</a>
-                                <a href="login.html" class="dropdown-item fw-medium fs-6"><i data-feather="log-out" class="fea icon-sm me-2 align-middle"></i>Logout</a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: inline;">
+                                    @csrf
+                                    <button type="submit">Logout</button>
+                                </form>
                             </div>
+                            @else
+                            <div class="dropdown-menu dd-menu dropdown-menu-end bg-white rounded shadow border-0 mt-3">
+                                <a href="{{ route('login') }}" class="dropdown-item fw-medium fs-6"><i data-feather="user" class="fea icon-sm me-2 align-middle"></i>Login</a>
+                                <a href="candidate-profile.html" class="dropdown-item fw-medium fs-6"><i data-feather="user" class="fea icon-sm me-2 align-middle"></i>Register</a>
+                            </div>
+                            @endauth
                         </div>
                     </li>
                 </ul>
@@ -285,11 +295,11 @@
         <a href="#" onclick="topFunction()" id="back-to-top" class="back-to-top rounded fs-5"><i data-feather="arrow-up" class="fea icon-sm align-middle"></i></a>
         <!-- Back to top -->
         <!-- JAVASCRIPTS -->
-	    <script src="js/bootstrap.bundle.min.js"></script>
-        <script src="js/choices.min.js"></script>
-        <script src="js/feather.min.js"></script>
+	    <script src="{{ asset('template/js/bootstrap.bundle.min.js') }}"></script>
+        <script src="{{ asset('template/js/choices.min.js') }}"></script>
+        <script src="{{ asset('template/js/feather.min.js') }}"></script>
 	    <!-- Custom -->
-	    <script src="js/plugins.init.js"></script>
-	    <script src="js/app.js"></script>
+	    <script src="{{ asset('template/js/plugins.init.js') }}"></script>
+	    <script src="{{ asset('template/js/app.js') }}"></script>
     </body>
 </html>

@@ -1,0 +1,200 @@
+//
+// _features.scss
+//
+
+/*********************************/
+/*         Features              */
+/*===============================*/
+.features {
+    .title {
+        transition: all 0.5s ease;
+        &:hover {
+            color: $primary !important;
+        }
+    }
+    .feature-icon {
+        width: 60px;
+        height: 60px;        
+    }
+}
+
+/*********************************/
+/*           Job Post            */
+/*===============================*/
+.job-post {
+    transition: all 0.5s ease;
+    .title,
+    .company {
+        &:hover {
+            color: $primary !important;
+        }
+    }
+
+    .like {
+        -webkit-text-fill-color: $gray-300;
+        &:hover, &:focus {
+            -webkit-text-fill-color: $danger;
+        }
+    }
+
+    &.job-type-three {
+        border: 1px solid transparent;
+        &:hover {
+            background-color: rgba($primary, 0.05) !important;
+            border-color: lighten($primary, 30%);
+        }
+    }
+
+    &.job-post-list {
+        &:hover {
+            transform: translateY(-6px);
+            box-shadow: $shadow-lg !important;
+        }
+        @media (max-width: 767px) {
+            .bookmark {
+                position: absolute;
+                top: 12px;
+                right: 12px;
+            }
+
+            .w-full {
+                width: 100%;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .w-310px{
+                width: 310px !important;
+            }
+            .w-250px{
+                width: 250px !important;
+            }
+            .w-100px{
+                width: 100px !important;
+            }
+            .w-130px{
+                width: 130px !important;
+            }
+        }
+    }
+}
+
+/*********************************/
+/*         Job Categories        */
+/*===============================*/
+.job-category {
+    transition: all 0.5s ease;
+    .title {
+        &:hover {
+            color: $primary !important;
+        }
+    }
+    .feature-icon {
+        transition: all 0.5s ease;
+        width: 60px;
+        height: 60px;        
+    }
+
+    &:hover {
+        background-color: rgba($primary, 0.05);
+        .feature-icon {
+            background-color: $primary !important;
+            color: $white !important;
+        }
+    }
+
+    &.job-category-two {
+        &:hover {
+            background: $primary !important;
+            color: $white !important;
+            .link {
+                color: $white !important;
+            }
+            .para {
+                color: rgba($white, 0.5) !important;
+            }
+        }
+    }
+}
+
+/*********************************/
+/*         Employer Listing      */
+/*===============================*/
+.employer-card {
+    .employer-img {
+        width: 56px;
+        height: 56px;
+        margin-top: -60px;
+    }
+
+    .content {
+        .title {
+            &:hover {
+                color: $primary !important;
+            }
+        }
+    }
+}
+
+/*********************************/
+/*        Candidate Listing      */
+/*===============================*/
+.candidate-card {
+    .content {
+        .title {
+            &:hover {
+                color: $primary !important;
+            }
+        }
+    }
+    
+    .like {
+        position: absolute;
+        top: 8px;
+        right: 12px;
+        -webkit-text-fill-color: $gray-300;
+        &:hover, &:focus {
+            -webkit-text-fill-color: $danger;
+        }
+    }
+}
+
+.candidate-cover {
+    img {
+        height: 250px;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+.candidate-profile {
+    transform: translateY(-45px);
+}
+
+.ribbon {
+    position: absolute;
+    top: -6px;
+    width: 75px;
+    height: 75px;
+    z-index: 2;
+    &.ribbon-right {
+        right: -4px;
+        span {
+            right: -22px;
+            transform: rotate(45deg);
+        }
+    }
+    &.ribbon-left {
+        left: -5px;
+        span {
+            left: -22px;
+            transform: rotate(-45deg);
+        }
+    }
+    span {
+        position: absolute;
+        top: 17px;
+        width: 100px;
+        color: $white;
+    }
+}
