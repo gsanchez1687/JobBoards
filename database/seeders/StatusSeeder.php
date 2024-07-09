@@ -1,7 +1,7 @@
 <?php
 
 namespace Database\Seeders;
-use App\Models\Status;
+use App\Models\statuses;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -18,7 +18,7 @@ class StatusSeeder extends Seeder
             ['name' => 'Rechazado'],
         ];
         foreach ($status as $statu) {
-            Status::create($statu);
+            statuses::create($statu);
         }
     }
 }

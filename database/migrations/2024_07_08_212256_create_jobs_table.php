@@ -15,10 +15,12 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained();
             $table->foreignId('country_id')->constrained();
+            $table->foreignId('state_id')->constrained();
+            $table->foreignId('city_id')->constrained();
             $table->foreignId('gender_id')->constrained();
             $table->integer('importance_id')->default(0)->nullable();
             $table->foreignId('currency_id')->constrained()->nullable();
-            $table->decimal('salary',2,10)->nullable();
+            $table->decimal('salary',10,8)->nullable();
             $table->foreignId('experience_id')->constrained();
             $table->foreignId('type_jobs_id')->constrained();
             $table->string('title');

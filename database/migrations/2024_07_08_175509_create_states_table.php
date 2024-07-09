@@ -12,21 +12,19 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('states', function (Blueprint $table) {
-            $table->mediumIncrements('id');
+            $table->id('id');
             $table->string('name', 255)->nullable(false);
-            $table->mediumInteger('country_id')->unsigned()->nullable(false);
+            $table->foreignId('country_id')->constrained();
             $table->char('country_code', 2)->nullable();
             $table->string('fips_code', 255)->nullable();
             $table->string('iso2', 191)->nullable();
             $table->string('type', 255)->nullable();
             $table->decimal('latitude', 10, 8)->nullable();
             $table->decimal('longitude', 11, 8)->nullable();
-            $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at')->useCurrent()->onUpdate(now());
+            $table->date('created_at');
+            $table->date('updated_at');
             $table->boolean('flag')->default(true);
             $table->string('wikiDataId', 255)->nullable();
-
-            $table->foreign('country_id')->references('id')->on('countries');
         });
     }
 
