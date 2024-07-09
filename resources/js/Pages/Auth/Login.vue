@@ -33,7 +33,7 @@ const submit = () => {
                     <div class="col-lg-4 col-md-5 col-12">
                         <div class="p-4 bg-white rounded shadow-md mx-auto w-100" style="max-width: 400px;">
                             <form @submit.prevent="submit">
-                                <Link :href="route('/')"><img src="images/logo-dark.png" class="mb-4 d-block mx-auto" alt=""></Link>
+                                <Link :href="route('home')"><img src="images/logo-dark.png" class="mb-4 d-block mx-auto" alt=""></Link>
                                 <h6 class="mb-3 text-uppercase fw-semibold"></h6>
                             
                                 <div class="mb-3">

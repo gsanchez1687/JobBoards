@@ -19,7 +19,7 @@
     </head>
     <body>
          <!-- Navbar STart -->
-         <header id="topnav" class="defaultscroll sticky">
+        <header id="topnav" class="defaultscroll sticky">
             <div class="container">
                 <a class="logo" href="index.html">
                     <span class="logo-light-mode">
@@ -67,7 +67,7 @@
                             </button>
                             @auth
                             <div class="dropdown-menu dd-menu dropdown-menu-end bg-white rounded shadow border-0 mt-3">
-                                <a href="candidate-profile.html" class="dropdown-item fw-medium fs-6"><i data-feather="user" class="fea icon-sm me-2 align-middle"></i>Profile</a>
+                                <a href="{{ route('profile.show') }}" class="dropdown-item fw-medium fs-6"><i data-feather="user" class="fea icon-sm me-2 align-middle"></i>Profile</a>
                                 <a href="candidate-profile-setting.html" class="dropdown-item fw-medium fs-6"><i data-feather="settings" class="fea icon-sm me-2 align-middle"></i>Settings</a>
                                 <div class="dropdown-divider border-top"></div>
                                 <a href="lock-screen.html" class="dropdown-item fw-medium fs-6"><i data-feather="lock" class="fea icon-sm me-2 align-middle"></i>Lockscreen</a>
@@ -79,7 +79,7 @@
                             @else
                             <div class="dropdown-menu dd-menu dropdown-menu-end bg-white rounded shadow border-0 mt-3">
                                 <a href="{{ route('login') }}" class="dropdown-item fw-medium fs-6"><i data-feather="user" class="fea icon-sm me-2 align-middle"></i>Login</a>
-                                <a href="candidate-profile.html" class="dropdown-item fw-medium fs-6"><i data-feather="user" class="fea icon-sm me-2 align-middle"></i>Register</a>
+                                <a href="{{ route('register') }}" class="dropdown-item fw-medium fs-6"><i data-feather="user" class="fea icon-sm me-2 align-middle"></i>Register</a>
                             </div>
                             @endauth
                         </div>
