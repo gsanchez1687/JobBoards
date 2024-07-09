@@ -21,7 +21,7 @@
          <!-- Navbar STart -->
         <header id="topnav" class="defaultscroll sticky">
             <div class="container">
-                <a class="logo" href="index.html">
+                <a class="logo" href="{{ route('home') }}">
                     <span class="logo-light-mode">
                         <img src="{{ asset('images/logo-dark.png') }}" class="l-dark" alt="">
                         <img src="{{ asset('images/logo-light.png') }}" class="l-light" alt="">
