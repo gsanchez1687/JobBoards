@@ -67,14 +67,14 @@
                             </button>
                             @auth
                             <div class="dropdown-menu dd-menu dropdown-menu-end bg-white rounded shadow border-0 mt-3">
-                                <a href="{{ route('profile.show') }}" class="dropdown-item fw-medium fs-6"><i data-feather="user" class="fea icon-sm me-2 align-middle"></i>Profile</a>
+                                <a href="{{ route('profile.show') }}" class="dropdown-item fw-medium fs-6">Mi Perfil</a>
                                 <div class="dropdown-divider border-top"></div>
-                                <a href="{{ route('logout') }}" class="dropdown-item fw-medium fs-6"><i data-feather="lock" class="fea icon-sm me-2 align-middle"></i>Cerrar Sesión</a>
+                                <a href="{{ route('logout') }}" class="dropdown-item fw-medium fs-6">Cerrar Sesión</a>
                             </div>
                             @else
                             <div class="dropdown-menu dd-menu dropdown-menu-end bg-white rounded shadow border-0 mt-3">
-                                <a href="{{ route('login') }}" class="dropdown-item fw-medium fs-6"><i data-feather="user" class="fea icon-sm me-2 align-middle"></i>Login</a>
-                                <a href="{{ route('register') }}" class="dropdown-item fw-medium fs-6"><i data-feather="user" class="fea icon-sm me-2 align-middle"></i>Register</a>
+                                <a href="{{ route('login') }}" class="dropdown-item fw-medium fs-6">Iniciar Sesión</a>
+                                <a href="{{ route('register') }}" class="dropdown-item fw-medium fs-6">Registrarse</a>
                             </div>
                             @endauth
                         </div>

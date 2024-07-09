@@ -19,14 +19,11 @@ use App\Http\Controllers\LoginController;
 
 Route::get('/', HomeController::class . '@home')->name('home');
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified',
+Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified',
 ])->group(function () {
     Route::get('/dashboard', function () {
-        return Inertia::render('Dashboard');
-    })->name('dashboard');
+        return Inertia::render('home');
+    })->name('home');
 });
 
 
