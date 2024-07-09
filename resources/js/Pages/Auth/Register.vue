@@ -25,88 +25,48 @@ const submit = () => {
 
 <template>
     <Head title="Register" />
+    <section class="bg-home d-flex align-items-center" style="background: url('images/hero/register.webp') center;">
+            <div class="bg-overlay bg-linear-gradient-2"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-5 col-12">
+                        <div class="p-4 bg-white rounded shadow-md mx-auto w-100" style="max-width: 400px;">
+                            <form @submit.prevent="submit">
+                                <a href="index.html"><img src="images/logo-dark.png" class="mb-4 d-block mx-auto" alt=""></a>
+                                <h6 class="mb-3 text-uppercase fw-semibold">Register your account</h6>
+                            
+                                <div class="mb-3">
+                                    <label class="form-label fw-semibold">Tu nombre</label>
+                                    <input v-model="form.name" type="text" name="name" id="name" class="form-control" placeholder="Calvin Carlo">
+                                    <InputError class="mt-2" :message="form.errors.name" />
+                                </div>
 
-    <AuthenticationCard>
-        <template #logo>
-            <AuthenticationCardLogo />
-        </template>
+                                <div class="mb-3">
+                                    <label class="form-label fw-semibold">Tu correo</label>
+                                    <input v-model="form.email" type="email" name="email" id="email" class="form-control" placeholder="example@website.com">
+                                    <InputError class="mt-2" :message="form.errors.email" />
+                                </div>
 
-        <form @submit.prevent="submit">
-            <div>
-                <InputLabel for="name" value="Name" />
-                <TextInput
-                    id="name"
-                    v-model="form.name"
-                    type="text"
-                    class="mt-1 block w-full"
-                    required
-                    autofocus
-                    autocomplete="name"
-                />
-                <InputError class="mt-2" :message="form.errors.name" />
-            </div>
+                                <div class="mb-3">
+                                    <label class="form-label fw-semibold" for="loginpass">Contraseña</label>
+                                    <input v-model="form.password" type="password" class="form-control" id="loginpass" placeholder="Password">
+                                    <InputError class="mt-2" :message="form.errors.password" />
+                                </div>
+                            
+                                <div class="form-check mb-3">
+                                    <input v-model="form.terms" type="checkbox" name="terms" class="form-check-input" value="" id="flexCheckDefault">
+                                    <label class="form-label form-check-label text-muted" for="flexCheckDefault">Accepto <a  class="text-primary">Terminos y condiciones</a></label>
+                                </div>
+                
+                                <button type="submit" class="btn btn-primary w-100" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">Registrar</button>
 
-            <div class="mt-4">
-                <InputLabel for="email" value="Email" />
-                <TextInput
-                    id="email"
-                    v-model="form.email"
-                    type="email"
-                    class="mt-1 block w-full"
-                    required
-                    autocomplete="username"
-                />
-                <InputError class="mt-2" :message="form.errors.email" />
-            </div>
-
-            <div class="mt-4">
-                <InputLabel for="password" value="Password" />
-                <TextInput
-                    id="password"
-                    v-model="form.password"
-                    type="password"
-                    class="mt-1 block w-full"
-                    required
-                    autocomplete="new-password"
-                />
-                <InputError class="mt-2" :message="form.errors.password" />
-            </div>
-
-            <div class="mt-4">
-                <InputLabel for="password_confirmation" value="Confirm Password" />
-                <TextInput
-                    id="password_confirmation"
-                    v-model="form.password_confirmation"
-                    type="password"
-                    class="mt-1 block w-full"
-                    required
-                    autocomplete="new-password"
-                />
-                <InputError class="mt-2" :message="form.errors.password_confirmation" />
-            </div>
-
-            <div v-if="$page.props.jetstream.hasTermsAndPrivacyPolicyFeature" class="mt-4">
-                <InputLabel for="terms">
-                    <div class="flex items-center">
-                        <Checkbox id="terms" v-model:checked="form.terms" name="terms" required />
-
-                        <div class="ms-2">
-                            I agree to the <a target="_blank" :href="route('terms.show')" class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Terms of Service</a> and <a target="_blank" :href="route('policy.show')" class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Privacy Policy</a>
+                                <div class="col-12 text-center mt-3">
+                                    <span><span class="text-muted small me-2">Ya tienes cuenta ? </span> <Link :href="route('login')" class="text-dark fw-semibold small">Iniciar Sesion</Link></span>
+                                </div><!--end col-->
+                            </form>
                         </div>
-                    </div>
-                    <InputError class="mt-2" :message="form.errors.terms" />
-                </InputLabel>
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                <Link :href="route('login')" class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                    Already registered?
-                </Link>
-
-                <PrimaryButton class="ms-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                    Register
-                </PrimaryButton>
-            </div>
-        </form>
-    </AuthenticationCard>
+                    </div><!--end col-->
+                </div><!--end row-->
+            </div><!--end container-->
+        </section><!--end section-->
 </template>

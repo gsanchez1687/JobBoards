@@ -26,7 +26,7 @@ const submit = () => {
 <template>
     <Head title="Log in" />
  <!-- Start Hero -->
- <section class="bg-home d-flex align-items-center" style="background: url('images/hero/login.jpg') center;">
+ <section class="bg-home d-flex align-items-center" style="background: url('images/hero/login.webp') center;">
             <div class="bg-overlay bg-linear-gradient-2"></div>
             <div class="container">
                 <div class="row">
@@ -61,7 +61,7 @@ const submit = () => {
                                 <button class="btn btn-primary w-100" type="submit" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">Sign in</button>
 
                                 <div class="col-12 text-center mt-3">
-                                    <span><span class="text-muted me-2 small">Don't have an account ?</span> <a href="signup.html" class="text-dark fw-semibold small">Sign Up</a></span>
+                                    <span><span class="text-muted me-2 small">Don't have an account ?</span> <Link :href="route('register')" class="text-dark fw-semibold small">Sign Up</Link></span>
                                 </div><!--end col-->
                             </form>
                         </div>
